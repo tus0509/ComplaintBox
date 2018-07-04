@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<title>ComplaintBox</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+
+</style>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#comp" class="w3-button w3-block w3-black">COMPLAIN</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#contact" class="w3-button w3-block w3-black">CONTACT</a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+ 
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+  <a href="#comp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">COMPLAIN</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1300px">
+
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="#">
+  <img class="w3-image" src="2.jpg" alt="Hamburger Catering" width="1300" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">ComplaintBox</h1>
+  </div>
+</header>
+
+  
+  <!-- The complain Section -->
+  <div class="w3-black" id="comp">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h2 class="w3-wide w3-center">COMPLAIN</h2>
+      <p class="w3-opacity w3-center"><i>Register your complaint!</i></p><br>
+        <div class="w3-third w3-margin-bottom">
+          <div class="w3-container w3-black">
+            </div>
+        </div>
+      
+         <div class="w3-third w3-margin-bottom">
+          <img src="1.jpg" alt="Blah" style="width:100%"class="w3-hover-opacity">
+          <div class="w3-container w3-white w3-center">
+               <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('register').style.display='block'">Register complaint</button>
+          </div>
+        </div>      
+      
+      <div class="w3-third w3-margin-bottom">
+          <div class="w3-container w3-black">
+            </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Register modal -->
+  <div id="register" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('register').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Complaint</h2>
+      </header>
+      <div class="w3-container">
+      <form method="post" action="/actionpage.php">
+        <p><label><i class="fa fa-user"></i> First name</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="firstname" name="firstname" required>
+        
+        <p><label><i class="fa fa-user"></i> Last name</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="lastname" name="lastname" required>
+        
+        <p><label><i class="fa fa-user"></i> Email</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Enter email" name="email" required>
+        
+        <p><label><i class="fa fa-shopping-cart"></i> Password</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="password" name="password" required>
+        
+        <div>
+                <style>
+                /* The container */
+                .container {
+                    display: block;
+                    position: relative;
+                    padding-left: 35px;
+                    margin-bottom: 12px;
+                    cursor: pointer;
+                    font-size: 17px;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+                
+                /* Hide the browser's default radio button */
+                .container input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+                
+                /* Create a custom radio button */
+                .checkmark {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 25px;
+                    width: 25px;
+                    background-color: #eee;
+                    border-radius: 50%;
+                }
+                
+                /* On mouse-over, add a grey background color */
+                .container:hover input ~ .checkmark {
+                    background-color: #ccc;
+                }
+                
+                /* When the radio button is checked, add a blue background */
+                .container input:checked ~ .checkmark {
+                    background-color: #2196F3;
+                }
+
+                /* Create the indicator (the dot/circle - hidden when not checked) */
+                .checkmark:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+                
+                /* Show the indicator (dot/circle) when checked */
+                .container input:checked ~ .checkmark:after {
+                    display: block;
+                }
+                
+                /* Style the indicator (dot/circle) */
+                .container .checkmark:after {
+                        top: 9px;
+                        left: 9px;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: white;
+                }
+                </style>
+
+                <p>Gender</p>
+                <label class="container">Male
+                  <input type="radio" name="gender" value="Male" required>
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Female
+                  <input type="radio" name="gender" value="Female" required>
+                  <span class="checkmark"></span>
+                </label>
+        
+        </div>
+        
+       <div> 
+       <p><label><i class="fa fa-shopping-cart"></i> Date of Birth</label></p>
+       <input class="w3-input w3-border" type="date" placeholder="dob" name="dob" required>
+       </div>
+       
+       <div class="w3-half">
+       <p><label><i class="fa fa-shopping-cart"></i> Course  <select name="course" required> </label></p>
+        <option value="BTech">BTech</option>
+          <option value="Culinary arts">Culinary arts</option>
+          <option value="Biomedical science">Biomedical Science</option>
+          <option value="Photography">Photography</option>
+         </select> 
+         </div>
+      
+      <div class="w3-half"> 
+      <p><label><i class="fa fa-shopping-cart"></i> Worker  <select name="worker"></label></p>
+        <option value="Electrician">Electrician</option>
+          <option value="Plumber">Plumber</option>
+          <option value="Carpentar">Carpentar</option>
+          <option value="Other">Other</option>
+        </select>
+        </div>
+      
+      <div>
+      <p><label><i class="fa fa-shopping-cart"></i> Room number</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Room no." name="roomno" required>
+       </div>
+       
+      <p><label><i class="fa fa-shopping-cart"></i> Complaint</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Enter your complaint" name="complain" required>
+      
+                    
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">SUBMIT <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('register').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ABOUT -->
+  <div class="w3-row w3-padding-64" id="about" style="max-width:1450px">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="complaint.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About ComplaintBox</h1><br>
+      <p class="w3-large">Students living in hostels are bound to face some basic day to day problems which need to be looked upon. 
+      The traditional method would be going to the administration and getting their complaints registered which would be a pain.
+      This portal helps the students staying in hostels in getting their complaints registered easily. The students only have to fill 
+      up a form which will take a maximum of 50 seconds.</p>
+      </div>
+  </div>
+
+  <!-- The Contact Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">CONTACT</h2>
+    <p class="w3-opacity w3-center"><i>Drop a note!</i></p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i>Pune, India<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: +91 9876543210<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: tac@mail.com<br>
+      </div>
+      <div class="w3-col m6">
+        <form action="/sendmess.php" method=post target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="n">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="e">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="msg">
+          <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+        </form>
+      </div>
+    </div>
+  
+  
+<!-- End Page Content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <a href="#" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</footer>
+
+</body>
+</html>
